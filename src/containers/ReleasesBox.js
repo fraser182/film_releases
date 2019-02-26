@@ -44,9 +44,7 @@ class ReleasesBox extends Component {
     return (
       <div className="releases-box">
       <Header title='Upcoming Film Releases for UK' />
-      <hr/>
       <FilmList film={this.state.data}/>
-      <hr/>
       <MoreReleases/>
       </div>
     )
