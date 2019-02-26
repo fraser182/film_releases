@@ -1,0 +1,10 @@
+.releases-box{
+  border: 2px solid black;
+  width: 26%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid blue; */
+  background-color: rgba(0, 0, 0, 0.08);
+
+}
