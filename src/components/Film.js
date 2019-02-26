@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import '../styles/Film.css';
 
-
-class Film extends Component {
-
-  render(){
-    return (
-      <li className='film'>
-      <a href={this.props.film.url}>{this.props.film.name}</a>
-      </li>
-    );
-  }
+// props is being passed in to the function
+const Film = (props)=> {
+  return (
+    <li className='film'>
+    <a href={props.film.url}>{props.film.name}</a>
+    </li>
+  );
 }
-  export default Film;
+
+export default Film;

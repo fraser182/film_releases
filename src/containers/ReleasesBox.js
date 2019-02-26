@@ -3,6 +3,7 @@ import Header from '../components/Header.js';
 import FilmList from '../components/FilmList.js';
 import MoreReleases from '../components/MoreReleases.js';
 import '../styles/ReleasesBox.css';
+import NewMovieForm from '../components/NewMovieForm.js';
 
 
 class ReleasesBox extends Component {
@@ -37,17 +38,27 @@ class ReleasesBox extends Component {
           url: "https://www.imdb.com/title/tt4154664/?ref_=rlm"
         }
       ]
-    }
+    };
+
+    this.handleNewMovieSubmit = this.handleNewMovieSubmit.bind(this);
+  }
+
+  handleNewMovieSubmit(newMovie){
+    newMovie.id = Date.now();
+    // creates a new array, with everything in the old one, and the new one. 3 dots remove the old array brackets.
+    const updatedMovies = [...this.state.data, newMovie]
+    this.setState({data: updatedMovies});
   }
 
   render(){
     return (
       <div className="releases-box">
+      <NewMovieForm onFilmSubmit={this.handleNewMovieSubmit}/>
       <Header title='Upcoming Film Releases for UK' />
       <FilmList film={this.state.data}/>
       <MoreReleases/>
       </div>
-    )
+    );
   }
 }
 

@@ -14,7 +14,7 @@ class FilmList extends Component {
       <ul className='film-list'>
       {filmObjects}
       </ul>
-    )
+    );
   }
 }
 
